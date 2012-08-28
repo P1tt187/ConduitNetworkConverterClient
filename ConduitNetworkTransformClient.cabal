@@ -11,6 +11,7 @@ executable ConduitNetworkTransformClient
   build-depends:   
                    base >= 4,
                    conduit,
-                   network-conduit
+                   network-conduit,
+                   blaze-builder-conduit
   ghc-options:     -Wall
 
