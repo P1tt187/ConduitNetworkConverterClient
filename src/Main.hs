@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# XNoMonomorphismRestriction #-}
 
 module Main where
 
@@ -12,7 +13,7 @@ import Data.Conduit.Blaze as Cbl
 main::IO()
 main = runTCPClient (ClientSettings 4000 "127.0.0.1") client
 
-client::Nw.Application IO
+client::GSource -> GSink
 client _ sink = do  
    transPipe $ Cb.sourceFile "someFile.txt" $$ sink
         
